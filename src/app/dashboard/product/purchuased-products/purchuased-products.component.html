@@ -5,7 +5,7 @@
   Total number of spent money: {{moneyTotal}} Kč
   <div *ngFor="let product of purchuasedProducts">
     <app-product [name]="product.name" [quantity]="product.quantity" [url]="product.imageUrl" [price]="product.price" [ID]="product.id"
-      class="product" [showButtons]="true"></app-product>
+      class="product" [showButtons]="false"></app-product>
   </div>
 </ion-content>
 

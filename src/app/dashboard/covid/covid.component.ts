@@ -16,6 +16,7 @@ export class CovidComponent implements OnInit, OnDestroy {
   countries: Countries = new Countries();
   selectedCountry = new Country();
   countryFlag: string;
+  hasData: boolean = true;
 
   constructor(private covidService: CovidService) { 
     this.getCountriesForSelect();
@@ -23,9 +24,16 @@ export class CovidComponent implements OnInit, OnDestroy {
   }
 
   setCovidData(responseData: CovidModel[]) {
-    this.covidStats = responseData;
-    this.lastCovidStat = this.covidStats[this.covidStats.length -1];
-    this.countryFlag = `https://flagpedia.net/data/flags/normal/${this.lastCovidStat.CountryCode.toLowerCase()}.png`
+    if(responseData.length===0){
+      this.hasData = false;
+    } 
+    else {
+      this.covidStats = responseData;
+      this.lastCovidStat = this.covidStats[this.covidStats.length -1];
+      this.countryFlag = `https://flagpedia.net/data/flags/normal/${this.lastCovidStat.CountryCode.toLowerCase()}.png`
+      this.hasData = true;
+    }
+    
   }
 
   getCovidData(countryName: string) {

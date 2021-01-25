@@ -5,7 +5,7 @@
     <ion-select-option *ngFor="let country of countries.result" [value]="country" >{{country.name}}</ion-select-option>   
   </ion-select>
 </ion-item>
-<ion-card>
+<ion-card *ngIf="hasData"> 
   <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwkLb7ph-LLgG_wqfvL_VDe0cU1hfox-bRQQ&usqp=CAU"></ion-img>
   <ion-card-content>
     <ion-card-header>
@@ -18,6 +18,9 @@
     </ion-card-header>
   </ion-card-content>
 </ion-card>
+<ion-text *ngIf="!hasData" color="blue">
+  <h4> Selected country has no data :(</h4>
+</ion-text>
 </ion-content>
 <div class="home">
   <ion-button color="secondary" (click)="goBack()">Back</ion-button>
