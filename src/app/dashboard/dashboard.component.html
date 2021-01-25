@@ -1,0 +1,25 @@
+<div class="header">
+  <img class="navbar__image"
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Ionic_Logo.svg/512px-Ionic_Logo.svg.png">
+  <img src="https://cdn3.iconfinder.com/data/icons/mobile-functions/154/phone-menu-128.png" (click)="openMenu($event)">
+</div>
+<ion-content id="men" class="background" overflow-scroll="false">
+  <ion-header class="second-header ion-padding">
+    <ion-title>
+      <ion-searchbar class="search-bar ion-padding" [(ngModel)]="userInput" (ionChange)="onInputChange($event)">
+      </ion-searchbar>
+    </ion-title>
+    <ion-card-content class="custom-buttons">
+      <ion-button color="secondary" (click)="filterSelectedCategory('')">All</ion-button>
+      <ion-button color="secondary" (click)="filterSelectedCategory('napoje')">Drinks</ion-button>
+      <ion-button color="secondary" (click)="filterSelectedCategory('jidlo')">Food</ion-button>
+      <ion-button color="secondary" (click)="filterSelectedCategory('svacina')">Snack</ion-button>
+    </ion-card-content>
+  </ion-header>
+<div class="home">
+    <div *ngFor="let product of filteredProducts">
+        <app-product [name]="product.name" [quantity]="product.quantity" [url]="product.imageUrl" [price]="product.price" [ID]="product.id"
+          class="product" [showButtons]="true"></app-product>
+      </div>
+</div>
+</ion-content>

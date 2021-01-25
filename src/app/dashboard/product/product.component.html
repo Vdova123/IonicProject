@@ -1,0 +1,21 @@
+<ion-card class="product-content" [ngClass]="{'purchuased-products': !showButtons}">
+    <ion-card-header>
+      <ion-card-title>{{name}}</ion-card-title>
+    </ion-card-header>
+    <ion-img class="product-image" [src]="url" alt=""></ion-img>
+    <div  class="quantity-changer bussiness-card">
+        Price:
+        <span>
+         {{price}} Kč
+        </span>
+      </div>
+    <div  class="quantity-changer bussiness-card" *ngIf="showButtons" >
+        Count:
+        <span>
+         {{quantity}}
+        </span>
+      </div>
+    <ion-button color="secondary" *ngIf="showButtons"  [routerLink]="['product',ID]">Detail</ion-button>
+    <ion-button *ngIf="showButtons" color="primary"(click)="buyProduct(ID)">Buy</ion-button>
+</ion-card>
+<router-outlet></router-outlet>

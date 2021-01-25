@@ -1,0 +1,14 @@
+.title  {
+    margin-top: 30vh;
+}
+
+.login-img {
+    height: 60px;
+    padding-top: 17px;
+}
+
+.product-image {
+    height: 100px;
+    -o-object-fit: contain;
+    object-fit: contain;
+}

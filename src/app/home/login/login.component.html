@@ -1,0 +1,29 @@
+
+    <ion-content class="ion-padding ion-text-center">
+      <ion-title class="title">Login</ion-title>
+      <ion-img class="login-img" src="https://ionicframework.com/blog/wp-content/uploads/2018/11/ionic-logo-white-300x300.png"></ion-img>
+    <ion-list>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="mail" item-start></ion-icon>
+          Email
+        </ion-label>
+        <ion-input color="black" type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="lock" item-start></ion-icon>
+          Password
+        </ion-label>
+        <ion-input color="black" type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      
+    </ion-list>
+    <ion-button icon-left size="medium" expand="full" shape="round" color="primary" (click)="login()" tappable>
+      <ion-icon name="log-in"></ion-icon>
+      Signin
+    </ion-button>
+    <ion-button expand="block" color="light" (click)="registerUser()">Register</ion-button>
+    </ion-content>
